@@ -63,7 +63,7 @@ const ChatFlowContainerDemo: React.FC = () => {
 
   // 使用 useRef 管理重试状态，避免全局污染
   const isRetryingRef = useRef(false);
-  const retryTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const retryTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   // 组件卸载时清理定时器，防止内存泄漏
   useEffect(() => {
